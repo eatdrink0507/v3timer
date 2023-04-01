@@ -2,12 +2,18 @@ import { useState, useEffect } from "react";
 import useInterval from "../useInterval";
 import styled from "styled-components";
 
-const Div = styled.div`
+type Vcss = {
+  fontcolor: string;
+  color: string;
+};
+
+const Div = styled.div<Vcss>`
   display: grid;
   text-align: center;
   grid-template-rows: 0.5fr 1fr 0.5fr 50%;
   width: 70%;
   padding-top: 13rem;
+  color: ${(props) => props.fontcolor};
   background-color: ${(props) => props.color};
   .leftcount {
     font-size: 3em;
@@ -15,7 +21,7 @@ const Div = styled.div`
   .now {
     font-size: 8em;
     text-align: left;
-    padding-left: 30%;
+    transform: translate(25%, -10%);
   }
 `;
 
@@ -66,12 +72,12 @@ function V3Count() {
     } else if (leftv === 1) {
       setBgcolor("lightblue");
     } else {
-      setBgcolor("#E96479");
+      setBgcolor("#E11299");
     }
   }, [leftv]);
 
   return (
-    <Div color={bgcolor}>
+    <Div color={bgcolor} fontcolor={leftv === 0 ? "white" : "black"}>
       <div>
         Start Enter <br /> Reset ESC
       </div>

@@ -52,7 +52,6 @@ const Timer = () => {
     };
   });
 
-  // isRunning === true 면 카운트 시작
   useInterval(
     () => {
       setNow(now + 1);
