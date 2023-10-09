@@ -37,7 +37,7 @@ function V3Count() {
           setIsRunning(true);
           setLeftv(1);
         } else {
-          setLeftv(0);
+          setCount(300);
         }
       } else if (e.key === "Escape") {
         setIsRunning(false);
