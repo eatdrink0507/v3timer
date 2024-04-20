@@ -32,7 +32,7 @@ function V3Count() {
 
   useEffect(() => {
     const onKeySet = (e: KeyboardEvent) => {
-      if (e.key === "Enter") {
+      if (e.key === "q") {
         if (!isRunning) {
           setIsRunning(true);
           setLeftv(1);
